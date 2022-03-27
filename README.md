@@ -69,7 +69,7 @@ If we relax the requirement that the second/fourth word of the Sator Square not 
 Our approach can be generalized in a similar fashion for Sator Squares of larger size.
 
 ### Dictionary Challenges: Getting *All* the Latin Words!
-If one wishes to work in English, one can download spell-check dictionaries of English which have all the valid forms of an English root word as individal entries in the plaintext file.  These plaintext files are easy to parse.  I have saved several to the repo.  
+If one wishes to work in English, one can download spell-check dictionaries of English which have all the valid forms of an English root word as individal entries in the plaintext file.  These plaintext files are easy to parse.  I have saved several to the repo.  The smaller ones do not have enough words to yield any 5x5 Sator Square.
 
 Sizeable English spell-checking plaintext dictionaries exist (e.g., 130K individual words) in part because *English morphology is relatively simple.*  Consider the word "show."  For the noun, there's simply "show" and "shows" for all forms.  The same word is also a verb, but its morphology is complete with "show," "shows," "showed" and "shown" -- and two of these four words are already in the dictionary under the noun's forms.
 
