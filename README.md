@@ -78,6 +78,25 @@ For Latin, it is a vastly different story.  Most nouns decline into 10 different
 #### How to get a list of all possible Latin words
 I started with the Hunspell Latin dictionary, which is impressively large in terms of its number of root words.  You can download it at [The Free Office Website](https://www.freeoffice.com/en/download/dictionaries) or from [Titus Wormer's Github](https://github.com/wooorm/dictionaries/tree/main/dictionaries).  (Hunspell is commonly used for spellchecking in Linux applications like LibreOffice.)
 
+Hunspell dictionaries do not store all possible forms of a word as individual entries.  Rather, they consist of a pair of files: a dictionary file (.dic) which has all the root words, one to a line, and followed by a slash (/) and a series of characters which are flags for their morphology rules.  A separate file (.aff) contains all the morphology rules.  This provides for considerable compaction.  The [Ubuntu Hunspell manual page] (http://manpages.ubuntu.com/manpages/bionic/man5/hunspell.5.html) provides details about how all this works.
+
+For our use, however, we need to unpack that collection into every conceivable form of every Latin word.  Thankfully, hunspell provides the ability to do so for any pair of .dic and .aff files with its `unmunch` utility found in the [Hunspell Github repo](https://github.com/hunspell/hunspell/tree/master/src/tools).
+
+There is a second problem, however, which arises from the fact that these are spell-checking dictionaries and Latin permits the writing of the vowel u with the same character as the consonant v.  Thus `ubique` can be written `vbiqve`.  While such usage reflects the writing of antiquity, I find it deeply annoying (so did Emperor Claudius, who tried to discontinue the practice) and moreover it *produces duplicates* of what is the same word, simply spelled with two different characters.  (For some reason, the same dictionary didn't do this with i and j, which work likewise in later Latin).
+
+So first I wrote a brief program to cull all the morphology rules in the .aff file that used v in place of u (e.g., changing a -us or -vm ending to -vm for second declension nominative masculine to accusative case).  Next, by inspection the .dic file was easy to remedy.  Its first half had all the root words with the u spelling, and the second half simply repeated all these with the v-for-u spelling.  I deleted all these words that used v for u.  The culled .aff and .dic files are available in my repository.  I further eliminated the end of the .dic file which contained abbreviations and Roman numerals.
+
+Then I set `unmunch` to work unpacking all the forms.  The result?  A word list of 7,278,827 Latin words! I have uploaded it to my repository in .zip format to save space.  (It's 13.8MB zipped, 104MB unzipped!)  Here's a little graph that compares how many more Latin words there are than English:
+
+
+
+I used this Latin word list as the dictionary for the NewSatorSquare program which implements the algorithm above.  I got about 4000 results.  Now all that remains is to comb through the squares myself for ones that actually mean something in Latin!
+
+### Further extensions
+The code can be expanded to include algorithms for larger size Sator Squares (e.g., 6x6 or 7x7).  While a larger square requires more conditions are met to find a set of words that fits, in Latin at least, there many more words of length 7 or more than in English, as the chart above attests.  So perhaps larger squares can be found -- and maybe some meaningful expressions among them.  I don't know if the ancients ever produced a larger square than 5x5.
+
+But why stop there?  It would also be fun to do something more radical.  What about a three-dimensional palindrome?  Words in a cube that read the same left-to-right, front-to-back, top-to-bottom, reflect about the four diagonals of the cube?  Or a four-dimensional one, a Sator hypercube, just to make sure it hadn't been done before in antiquity.  :-)
+
 
 
 
