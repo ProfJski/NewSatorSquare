@@ -54,9 +54,9 @@ For a 5x5 matrix, if we label the coordinates row-first then column like so:
 We require that the character C(0,1) = C(1,0), C(0,2)=C(2,0), C(1,2)=C(2,1), etc. for one diagonal, and also that C(0,3)=(1,4), C(0,2)=C(2,4), C(1,2)=C(2,3), etc. for the other diagonal.  Closer consideration reveals that because of symmetry, we don't have to check all these conditions.
 
 For the 5x5 matrix, we proceed as follows:
-- Comb a text file dictionary for words that are 5 characters long and put them in the `dictionary` vector
-- Search the `dictionary` vector, and create a `palindromes` vector of all palindromic words (for the middle row of the square)
-- Search the `dictionary` vector, and create a `pairs` vector for the palindromic pairs needed for the other rows.  This task has N-squared time complexity, but it doesn't take too long on a modern computer even for a large dictionary.
+- Comb a text file dictionary for words that are 5 characters long and put them in the `words` vector
+- Search the `words` vector, and create a `palindromes` vector of all palindromic words (for the middle row of the square)
+- Search the `words` vector, and create a `pairs` vector for the palindromic pairs needed for the other rows.  This task has N-squared time complexity, but it doesn't take too long on a modern computer even for a large dictionary.
 
 If we go with the stricter requirement that all palindromic pairs are meaningful words in the dictionary, then next we do:
 - For every word in the `pairs` vector (=candidate for Row 0 word), find every word in the `pairs` vector such that C(0,1)=C(1,0) and C(0,3)=C(1,4), which makes it a candidate for a Row 1 word.
@@ -64,7 +64,7 @@ If we go with the stricter requirement that all palindromic pairs are meaningful
 - If we a palindrome that satisfies these requirements, we've got a Sator Square!  Save the trio to the `results` vector.  Otherwise, move on.
 
 If we relax the requirement that the second/fourth word of the Sator Square not be a palindromic pair, but we permit one word of the pair to mean nothing, then first step in the immediately preceding list becomes:
-- For every word in the `pairs` vector (=candidate for Row 0 word), find every word in the **`dictionary`** vector such that C(0,1)=C(1,0) and C(0,3)=C(1,4), which makes it a candidate for a Row 1 word.
+- For every word in the `pairs` vector (=candidate for Row 0 word), find every word in the **`words`** vector such that C(0,1)=C(1,0) and C(0,3)=C(1,4), which makes it a candidate for a Row 1 word.
 
 Our approach can be generalized in a similar fashion for Sator Squares of larger size.
 
