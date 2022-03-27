@@ -84,26 +84,18 @@ For our use, however, we need to unpack that collection into every conceivable f
 
 There is a second problem, however, which arises from the fact that these are spell-checking dictionaries and Latin permits the writing of the vowel u with the same character as the consonant v.  Thus `ubique` can be written `vbiqve`.  While such usage reflects the writing of antiquity, I find it deeply annoying (so did Emperor Claudius, who tried to discontinue the practice) and moreover it *produces duplicates* of what is the same word, simply spelled with two different characters.  (For some reason, the same dictionary didn't do this with i and j, which work likewise in later Latin).
 
-So first I wrote a brief program to cull all the morphology rules in the .aff file that used v in place of u (e.g., changing a -us or -vm ending to -vm for second declension nominative masculine to accusative case).  Next, by inspection the .dic file was easy to remedy.  Its first half had all the root words with the u spelling, and the second half simply repeated all these with the v-for-u spelling.  I deleted all these words that used v for u.  The culled .aff and .dic files are available in my repository.  I further eliminated the end of the .dic file which contained abbreviations and Roman numerals.
+So first I wrote a brief program to cull all the morphology rules in the .aff file that used v in place of u (e.g., changing a -us or -vm ending to -vm rather than -um for second declension nominative masculine to accusative case).  A few rules still survived so I deleted what I saw remaining by hand.  Next, by inspection the .dic file was easy to remedy.  Its first half had all the root words with the u spelling, and the second half simply repeated all these with the v-for-u spelling.  I deleted all these words that used v for u.  The culled .aff and .dic files are available in my repository.  I further eliminated the end of the .dic file which contained abbreviations and Roman numerals since these are useless for our purposes.
 
-Then I set `unmunch` to work unpacking all the forms.  The result?  A word list of 7,278,827 Latin words! I have uploaded it to my repository in .zip format to save space.  (It's 13.8MB zipped, 104MB unzipped!)  Here's a little graph that compares how many more Latin words there are than English:
+Then I set `unmunch` to work unpacking all the forms.  The result?  A massive list.  But I noticed it still had some duplicates (not due to the v-for-u spelling rules) so I wrote a simply program to reduce the list to unique entries.  The result?  A word list of 7,278,827 unique Latin words! I have uploaded it to my repository in .zip format to save space.  (It's 13.8MB zipped, 104MB unzipped!)  Here's a little graph that compares how many more Latin words there are than English:
 
+![Graph of Latin vs. English Words by Word Length](/images/LatinVsEnglishWords.png)
 
+I used this Latin word list as the dictionary for the NewSatorSquare program which implements the algorithm above.  I got about 4000 results.  Now all that remains is to comb through the squares myself for ones that actually mean something in Latin and are not just an interlocking grid of word salad!
 
-I used this Latin word list as the dictionary for the NewSatorSquare program which implements the algorithm above.  I got about 4000 results.  Now all that remains is to comb through the squares myself for ones that actually mean something in Latin!
+As a side note: Another feature of the Hunspell dictionary is support of ligatures (e.g., ae written as one character).  These I did not cull simply out of personal preference.  They might make for some interesting options.  At the same time, one could easily write a simple program to filter these out of the dictionary list too.
 
 ### Further extensions
 The code can be expanded to include algorithms for larger size Sator Squares (e.g., 6x6 or 7x7).  While a larger square requires more conditions are met to find a set of words that fits, in Latin at least, there many more words of length 7 or more than in English, as the chart above attests.  So perhaps larger squares can be found -- and maybe some meaningful expressions among them.  I don't know if the ancients ever produced a larger square than 5x5.
 
 But why stop there?  It would also be fun to do something more radical.  What about a three-dimensional palindrome?  Words in a cube that read the same left-to-right, front-to-back, top-to-bottom, reflect about the four diagonals of the cube?  Or a four-dimensional one, a Sator hypercube, just to make sure it hadn't been done before in antiquity.  :-)
-
-
-
-
-
-
-
-
-
-
 
