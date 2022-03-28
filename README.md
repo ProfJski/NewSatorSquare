@@ -11,13 +11,10 @@ TENET
 OPERA
 ROTAS
 ```
-Left-to-right then top-to-bottom (normal English order): Sator Arepo tenet opera rotas.
-
-Top-to-bottom then left-to-right: Sator Arepo tenet opera rotas.
-
-Right-to-left then bottom-to-top: Sator Arepo tenet opera rotas.
-
-Bottom-to-top then right-to-left: Sator Arepo tenet opera rotas.
+- Left-to-right then top-to-bottom (normal English order): Sator Arepo tenet opera rotas.
+- Top-to-bottom then left-to-right: Sator Arepo tenet opera rotas.
+- Right-to-left then bottom-to-top: Sator Arepo tenet opera rotas.
+- Bottom-to-top then right-to-left: Sator Arepo tenet opera rotas.
 
 If written out as a 1D sentence, it is also a palindrome.
 
