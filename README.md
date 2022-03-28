@@ -27,11 +27,11 @@ The Sator Square was reproduced all over Europe for hundreds of years and its cr
 
 ![Sator Square](https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Grenoble_-_Sator_02.jpg/330px-Grenoble_-_Sator_02.jpg)
 
-As for how nicely to translate it, you can read various opinions online, but I'm going with "Arepo the Sower holds the Wheel Work."  In both pagan and Christian milieux this sort of translation tended to see the phrase as indicating that God (or Christ as "the Sower", or the *logos spermatikos* of Stoic philosophy) governed the world (by having hold of its "wheels" = inner workings).
+As for how to translate it fittingly, you can read various opinions online, but I'm going with "Arepo the Sower holds the Wheel Work."  In both pagan and Christian milieux this sort of translation tended to see the phrase as indicating that God (or Christ as "the Sower", or the *logos spermatikos* of Stoic philosophy) governed the world (by having hold of its "wheels" = inner workings).
 
 Word mysticism aside, it's been a long time since we've had another Sator-like square, and they are not easy to make up with pencil and paper and sheer cleverness.  
 
-**Given the enormous popularity of the first Sator Square, wouldn't it be nice to find more?**
+**Given the enormous popularity of the first Sator Square, wouldn't it be nice to find more?**  Now you can!
 
 ## Tools Required: An algorithm and a dictionary
 ### Algorithm
